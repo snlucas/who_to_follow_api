@@ -1,7 +1,8 @@
-import os
+from cgitb import handler
 import requests
+from mangum import Mangum
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI
 
 app = FastAPI(title="WhoToFollow")
 s = requests.Session()
@@ -48,3 +49,5 @@ def get_n_profiles_by_amount_of_stars():
 @app.get("/{technology}/{total_profiles}")
 def get_n_profiles_based_on_projects_and_stars():
     ...
+
+handler = Mangum(app=app)
