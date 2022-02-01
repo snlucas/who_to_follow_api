@@ -1,5 +1,5 @@
 # Who To Follow API
-Know who to follow based on their projects and stars.
+Know who to follow based on their projects and stars.<br>
 If you started to learn some technology it's good to follow someone else that is actively creating projects using it.
 This project want to make it easier.
 
