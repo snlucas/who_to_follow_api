@@ -1,4 +1,3 @@
-from cgitb import handler
 import requests
 from mangum import Mangum
 
