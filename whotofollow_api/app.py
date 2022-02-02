@@ -1,13 +1,13 @@
 from chalice import Chalice
 import requests
 
-app = Chalice(app_name='whotofollow_api')
+app = Chalice(app_name="whotofollow_api")
 s = requests.Session()
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return {'hello': 'world'}
+    return {"hello": "world"}
 
 
 def sort_by_stars(query: str) -> dict:
@@ -24,11 +24,11 @@ def get_by_amount_of_projects():
 @app.route("/{technology}/stars")
 def get_by_amount_of_stars(technology: str) -> dict:
     repos = sort_by_stars(technology)
-    top_five = repos['items'][:5]
+    top_five = repos["items"][:5]
     readable_top_five = {}
 
     for repo in top_five:
-        readable_top_five[repo['owner']['login']] = repo['owner']['url']
+        readable_top_five[repo["owner"]["login"]] = repo["owner"]["url"]
 
     return readable_top_five
 
